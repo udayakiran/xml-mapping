@@ -164,7 +164,7 @@ begin
       alias_method :warn, :old_warn
     end
   end
-rescue NameError
+rescue StandardError
   # bug is present -- fix it. I use Element#write in numerous tests and rdoc
   #  inline code snippets. TODO: switch to REXML::Formatters there sometime.
   class REXML::Element
